@@ -14,6 +14,9 @@ export class SearchComponent implements OnInit{
 	constructor(private router: Router,
 							private route: ActivatedRoute,
 							private spotify: SpotifyService){
+		this.route
+			.queryParams
+			.subscribe(params => { this.query = params['query'] || '';});
 
 	}
 
@@ -22,9 +25,20 @@ export class SearchComponent implements OnInit{
 	}
 
 	search(): void {
-		console.log('this.query', this.query);
+		// console.log('this.query', this.query);
 		if(!this.query) {
 			return;
 		}
+		this.spotify
+			.searchTrack(this.query)
+			.subscribe( (res: any) => {
+				console.log(res)
+			});
+	}
+
+	submit(query: string): void {
+		// console.log(query);
+		this.router.navigate( ['search'], {queryParams: { query: query}})
+			.then(_ => this.search());
 	}
 }

@@ -10,11 +10,12 @@ import { SearchComponent } from './components/SearchComponent';
 import { SPOTIFY_PROVIDERS } from './services/SpotifyService';
 
 const routes: Routes = [
-  { path: '', component: SearchComponent }
+  { path: '', redirectTo: 'search', pathMatch: 'full' },
+  { path: 'search', component: SearchComponent }
 ];
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     AppComponent,
     SearchComponent
   ],
