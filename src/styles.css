@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #E4E4E4;
+  font-family: "San Francisco", "Helvetica Neue", Helvetica,Arial,sans-serif;
+}
+
+.page-header {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-top: 0px;
+  background-color: white;
+}
