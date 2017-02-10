@@ -6,18 +6,21 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/SearchComponent';
+import { AlbumComponent } from './components/AlbumComponent';
 
 import { SPOTIFY_PROVIDERS } from './services/SpotifyService';
 
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
-  { path: 'search', component: SearchComponent }
+  { path: 'search', component: SearchComponent },
+  { path: 'album/:id', component: AlbumComponent }
 ];
 
 @NgModule({
   declarations: [ 
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,
