@@ -7,12 +7,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './components/SearchComponent';
 import { AlbumComponent } from './components/AlbumComponent';
+import { TrackComponent } from './components/TrackComponent';
 
 import { SPOTIFY_PROVIDERS } from './services/SpotifyService';
 
 const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: 'search', component: SearchComponent },
+  { path: 'track/:id', component: TrackComponent },
   { path: 'album/:id', component: AlbumComponent }
 ];
 
@@ -20,7 +22,8 @@ const routes: Routes = [
   declarations: [ 
     AppComponent,
     SearchComponent,
-    AlbumComponent
+    AlbumComponent,
+    TrackComponent
   ],
   imports: [
     BrowserModule,
