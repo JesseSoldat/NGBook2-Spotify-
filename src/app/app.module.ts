@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './components/SearchComponent';
 import { AlbumComponent } from './components/AlbumComponent';
 import { TrackComponent } from './components/TrackComponent';
+import { ArtistComponent } from './components/ArtistComponent';
 
 import { SPOTIFY_PROVIDERS } from './services/SpotifyService';
 
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'search', pathMatch: 'full' },
   { path: 'search', component: SearchComponent },
   { path: 'track/:id', component: TrackComponent },
-  { path: 'album/:id', component: AlbumComponent }
+  { path: 'album/:id', component: AlbumComponent },
+  { path: 'artist/:id', component: ArtistComponent }
 ];
 
 @NgModule({
@@ -23,7 +25,8 @@ const routes: Routes = [
     AppComponent,
     SearchComponent,
     AlbumComponent,
-    TrackComponent
+    TrackComponent,
+    ArtistComponent
   ],
   imports: [
     BrowserModule,
